@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://c0bp5nw8x5rnv"]
+
+[ext_resource type="Script" uid="uid://dfq2y5qbwbgfm" path="res://scripts/car.gd" id="1_3mrxu"]
+[ext_resource type="Texture2D" uid="uid://gyph11mrdy4c" path="res://assets/images/cars/SportsRacingCar_forward_animation.png" id="1_qt2eu"]
+[ext_resource type="Texture2D" uid="uid://dfvliaqjx5aw" path="res://assets/images/cars/SportsRacingCar_left_animation.png" id="2_50v30"]
+[ext_resource type="Texture2D" uid="uid://c0jrbstgqww53" path="res://assets/images/cars/SportsRacingCar_0.png" id="2_jtldb"]
+[ext_resource type="Texture2D" uid="uid://3d38x6mro8jo" path="res://assets/images/cars/SportsRacingCar_right_animation.png" id="4_3mrxu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtldb"]
+atlas = ExtResource("1_qt2eu")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mrxu"]
+atlas = ExtResource("1_qt2eu")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cp117"]
+atlas = ExtResource("1_qt2eu")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uraa1"]
+atlas = ExtResource("2_jtldb")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4clw4"]
+atlas = ExtResource("2_50v30")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctevm"]
+atlas = ExtResource("2_50v30")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gm33m"]
+atlas = ExtResource("4_3mrxu")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugdpj"]
+atlas = ExtResource("4_3mrxu")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uraa1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtldb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mrxu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cp117")
+}],
+"loop": true,
+"name": &"gas",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uraa1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4clw4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctevm")
+}],
+"loop": true,
+"name": &"left",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gm33m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugdpj")
+}],
+"loop": true,
+"name": &"right",
+"speed": 7.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3mrxu"]
+radius = 15.0
+height = 68.0
+
+[node name="Car" type="Area2D" unique_id=1954857874]
+script = ExtResource("1_3mrxu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=801008010]
+texture_filter = 1
+rotation = 3.1415927
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_uraa1")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2128858935]
+position = Vector2(4, 0)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_3mrxu")

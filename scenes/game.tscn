@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ie4nnb1b7emf"]
+
+[ext_resource type="PackedScene" uid="uid://dxkrw47o1adl0" path="res://scenes/tracks/track.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://c0bp5nw8x5rnv" path="res://scenes/car.tscn" id="2_yqjtg"]
+
+[node name="Game" type="Node2D" unique_id=1871129161]
+
+[node name="Track" parent="." unique_id=669018561 instance=ExtResource("1_uwrxv")]
+
+[node name="Car" parent="." unique_id=1954857874 instance=ExtResource("2_yqjtg")]
+position = Vector2(3372, 564)
+rotation = 3.1415927
+
+[node name="Camera2D" type="Camera2D" parent="Car" unique_id=1703533111]

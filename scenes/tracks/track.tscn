@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dxkrw47o1adl0"]
+
+[ext_resource type="Texture2D" uid="uid://c1styy71uhlpv" path="res://assets/images/racetracks/RaceTrack_2_complete.png" id="1_6xcl0"]
+
+[node name="Track" type="Node" unique_id=669018561]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=40948113]
+z_index = -1
+position = Vector2(2197, 1076)
+texture = ExtResource("1_6xcl0")
